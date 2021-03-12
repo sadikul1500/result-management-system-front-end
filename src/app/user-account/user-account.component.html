@@ -1,0 +1,66 @@
+
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Welcome {{service.user.roll}}</h1>
+</div>
+
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>Roll</th>
+            <th>Batch</th>
+            <th>Mail</th>
+            <th>Result</th>            
+        </tr>
+    </thead>
+        <tbody>        
+                
+            <tr>
+                <td > {{service.user.roll}} </td>
+                <td > {{service.user.batch}} </td> 
+                <td > {{service.user.mail}} </td>
+                <td > {{service.user.result}} </td>                           
+            </tr>              
+                 
+        </tbody>
+    
+</table>
+
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>Roll</th>
+            <th>Semester</th>
+            <th>Course Code</th>
+            <th>mid</th>
+            <th>Quiz</th>
+            <th>Lab</th>
+            <th>final</th>
+            <th>Course Result</th>
+            
+        </tr>
+    </thead>
+        <tbody>
+            <ng-container *ngFor="let res of service.results">
+                
+                    <tr  *ngIf="res.roll === currentUser.getUsername()">
+                        <td > {{res.roll}} </td>
+                        <td > {{res.semester}} </td>
+                        <td > {{res.courseCode}} </td>
+                        <td > {{res.mid}} </td>
+                        <td > {{res.quiz}} </td>
+                        <td > {{res.lab}} </td>
+                        <td > {{res.final}} </td>
+                        <td > {{res.courseResult}} </td>                      
+        
+                    </tr>
+                
+            </ng-container>
+            
+        </tbody>
+    
+</table>
+
+<div class="container">
+    <button class="btn btn-info btn-lg btn-block" type="submit" 
+            (click)="logout()">Log Out</button>
+</div>

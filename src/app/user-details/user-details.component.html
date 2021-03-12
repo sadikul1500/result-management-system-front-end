@@ -1,0 +1,50 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Admin In Charge</h1>
+</div>
+
+<div class="container">
+    <app-user-details-form></app-user-details-form>
+</div>
+
+
+
+
+
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>Roll</th>
+            <th>Semester</th>
+            <th>Course Code</th>
+            <th>mid</th>
+            <th>Quiz</th>
+            <th>Lab</th>
+            <th>final</th>
+            <th>Result</th>
+            <th></th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor="let res of service.results">
+                <td (click)="populateForm(res)">{{res.roll}}</td>
+                <td (click)="populateForm(res)">{{res.semester}}</td>
+                <td (click)="populateForm(res)">{{res.courseCode}}</td>
+                <td (click)="populateForm(res)">{{res.mid}}</td>
+                <td (click)="populateForm(res)">{{res.quiz}}</td>
+                <td (click)="populateForm(res)">{{res.lab}}</td>
+                <td (click)="populateForm(res)">{{res.final}}</td>
+                <td (click)="populateForm(res)">{{res.courseResult}}</td>
+                <td>
+                    <i class="far fa-trash-alt fa-lg text-danger" 
+                        (click)="onDelete(res.roll)"></i>
+                </td>
+                <!-- *ngIf="res.roll !== 1001" -->
+
+            </tr>
+        </tbody>
+    
+</table>
+
+
+
+

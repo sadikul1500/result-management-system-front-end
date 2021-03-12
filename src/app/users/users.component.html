@@ -1,0 +1,36 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">User Information</h1>
+</div>
+
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>Roll</th>
+            <th>Batch</th>
+            <th>Mail</th>
+            <th>Result</th>
+            
+            <th></th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor="let us of service.users">
+                <td >{{us.roll}} </td>
+                <td >{{us.batch}} </td>
+                <td >{{us.mail}} </td>
+                <td >{{us.result}} </td>
+                
+                <td>
+                    <i *ngIf="us.roll !== 101010" class="far fa-trash-alt fa-lg text-danger"
+                        (click)="onDelete(us.id)"></i>
+                </td>
+
+            </tr>
+        </tbody>
+    
+</table>
+
+<div class="container">
+    <button class="btn btn-info btn-lg btn-block" type="submit" 
+            (click)="logout()">Log Out</button>
+</div>

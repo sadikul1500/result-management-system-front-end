@@ -1,0 +1,130 @@
+<!--
+<div class="container">
+    <button class="btn btn-info btn-lg btn-block" (click)="viewUsers()">View Users List</button>
+</div>
+-->
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <button class="btn btn-info btn-lg btn-block"
+        (click)="viewUsers()">View Users List</button>
+    </div>
+    <div class="form-group col-md-6">
+        <button class="btn btn-info btn-lg btn-block" 
+         (click)="logout()">Log Out</button>
+    </div>
+       
+</div>
+
+<form novalidate autocomplete="off" #form="ngForm" (submit) = "onSubmit(form)"> 
+    <input type="hidden" name="id"
+    [value]="service.formData.id" />
+    
+    <div class="form-group">
+        <label>Roll</label>
+        <input type="number" class="form-control form-control-lg" placeholder="Roll Number"
+        name="roll" #roll="ngModel" [(ngModel)] = "service.formData.roll"
+        required [class.invalid]="roll.invalid && roll.touched">
+    </div>
+
+
+    <div class="form-group">
+        <label>Semester</label>
+        <input type="number" class="form-control form-control-lg" placeholder="1"
+        name="semester" #semester="ngModel" [(ngModel)] = "service.formData.semester"
+        required [class.invalid]="semester.invalid && semester.touched">
+    </div>
+
+    <div class="form-group">
+        <label>Course Code</label>
+        <input type="text" class="form-control form-control-lg" placeholder="101"
+        name="courseCode" #courseCode="ngModel" [(ngModel)] = "service.formData.courseCode"
+        required [class.invalid]="courseCode.invalid && courseCode.touched">
+    </div>
+
+    <div class="form-group">
+        <label>Mid Mark( Out of 20 )</label>
+        <input type="number" class="form-control form-control-lg" placeholder="10.5"
+        name="mid" #mid="ngModel" [(ngModel)] = "service.formData.mid"
+        required min="0.0" max="20.0" [class.invalid]="mid.invalid && mid.touched">
+    </div>
+
+    <div class="form-group">
+        <label>Quiz Mark (Out of 10)</label>
+        <input type="number" class="form-control form-control-lg" placeholder="7.5"
+        name="quiz" #quiz="ngModel" [(ngModel)] = "service.formData.quiz"
+        required min="0.0" max="10.0" [class.invalid]="quiz.invalid && quiz.touched">
+    </div>
+
+    <div class="form-group">
+        <label>Lab Mark (Out of 20)</label>
+        <input type="number" class="form-control form-control-lg" placeholder="10.5"
+        name="lab" #lab="ngModel" [(ngModel)] = "service.formData.lab"
+        required min="0.0" max="20.0" [class.invalid]="lab.invalid && lab.touched">
+    </div>
+
+    <div class="form-group">
+        <label>Final Exam Mark (Out of 50)</label>
+        <input type="number" class="form-control form-control-lg" placeholder="10.5"
+        name="final" #final="ngModel" [(ngModel)] = "service.formData.final"
+        required min="0.0" max="50.0" [class.invalid]="final.invalid && final.touched">
+    </div>
+
+
+        
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid"
+            (click)="Add()">Add</button>
+        </div>
+        <div class="form-group col-md-6">
+            <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid"
+             (click)="Update()">Update</button>
+        </div>
+           
+    </div>
+</form>
+
+
+
+
+
+
+
+
+<!--
+<form novalidate autocomplete="off" #form="ngForm" (submit) = "onSubmit(form)"> 
+    <input type="hidden" name="id"
+    [value]="service.formData.id" />
+    
+    <div class="form-group">
+        <label>Roll</label>
+        <input type="text" class="form-control form-control-lg" placeholder="Roll Number"
+        name="roll" #roll="ngModel" [(ngModel)] = "service.formData.roll"
+        required [class.invalid]="roll.invalid && roll.touched">
+    </div>
+
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control form-control-lg" placeholder="password"
+        name="password" #password="ngModel" [(ngModel)] = "service.formData.password"
+        required maxlength="15" minlength="3" [class.invalid]="password.invalid && password.touched">
+    </div>
+
+        
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid"
+            (click)="SignIn()">Sign In</button>
+        </div>
+        <div class="form-group col-md-4">
+            <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid"
+             (click)="SignUp()">Sign Up</button>
+        </div>
+        <div class="form-group col-md-4">
+            <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid"
+             (click)="Update()">Update</button>
+        </div>    
+    </div>
+</form>
+-->
