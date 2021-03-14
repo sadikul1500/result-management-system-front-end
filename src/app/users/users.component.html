@@ -1,36 +1,85 @@
-<div class="jumbotron py-3">
-    <h1 class="display-4 text-center">User Information</h1>
-</div>
+<style>
+    body{
+        background-image: url(assets/sky.jpg);
+        background-size: cover;
+    }
 
-<table class="table table-hover">
-    <thead class="thead-light">
-        <tr>
-            <th>Roll</th>
-            <th>Batch</th>
-            <th>Mail</th>
-            <th>Result</th>
-            
-            <th></th>
-        </tr>
-    </thead>
-        <tbody>
-            <tr *ngFor="let us of service.users">
-                <td >{{us.roll}} </td>
-                <td >{{us.batch}} </td>
-                <td >{{us.mail}} </td>
-                <td >{{us.result}} </td>
+    #ui{
+        background-color: rgba(255, 255, 255, 0.5); 
+        padding:25px;
+          
                 
-                <td>
-                    <i *ngIf="us.roll !== 101010" class="far fa-trash-alt fa-lg text-danger"
-                        (click)="onDelete(us.id)"></i>
-                </td>
+    }
 
-            </tr>
-        </tbody>
+    .pad{
+        color: #333;
+        font-size: 1.3em;
+        font-weight: 600;
+        
+    }
+
+    .btn{
     
-</table>
+        background-color: transparent;
+        color: black;
+        border-width: 2px;
+        border-color: black;
+        font-weight: bold;
+        
+    
+    }
+</style>
 
-<div class="container">
-    <button class="btn btn-info btn-lg btn-block" type="submit" 
-            (click)="logout()">Log Out</button>
-</div>
+
+
+<body>
+    
+
+    <div class="jumbotron py-3">
+        <h1 class="display-4 text-center">User Information</h1>
+    </div>
+
+    <div id='ui'>
+
+        <table class="table table-hover pad">
+            <thead class="thead-light">
+                <tr>
+                    <th>Roll</th>
+                    <th>Batch</th>
+                    <th>Mail</th>
+                    <th>Result</th>
+                    
+                    <th></th>
+                </tr>
+            </thead>
+                <tbody>
+                    <tr *ngFor="let us of service.users">
+                        <td >{{us.roll}} </td>
+                        <td >{{us.batch}} </td>
+                        <td >{{us.mail}} </td>
+                        <td >{{us.result}} </td>
+                        
+                        <td>
+                            <i *ngIf="us.roll !== 101010" class="far fa-trash-alt fa-lg text-danger"
+                                (click)="onDelete(us.id)"></i>
+                        </td>
+
+                    </tr>
+                </tbody>
+            
+        </table>
+
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <button class="btn btn-info btn-lg btn-block" type="submit" 
+                    (click)="logout()">Log Out</button>
+            </div>
+            <div class="col-lg-3"></div>
+            
+        </div>
+
+    </div>
+
+
+</body>
