@@ -13,7 +13,7 @@ export class UserAccountService {
 
   constructor(private http: HttpClient, private log: LoginService) { }
 
-  readonly baseUrl = 'https://localhost:44305/api/User';
+  readonly baseUrl = 'http://localhost:5000/api/User' //https://localhost:44305/api/User';
   formData: UserAccount = new UserAccount();
   //currentUser = this.log.getUser();
   //password = this.log.getPassword();
