@@ -28,6 +28,15 @@
         margin-top: 50px;
 
     }
+    .white{
+        background-color: gray;
+    }
+    th{
+        text-align: center;
+    }
+    td{
+        text-align: center;
+    }
 </style>
 
 
@@ -47,7 +56,7 @@
                     <th>Roll</th>
                     <th>Batch</th>
                     <th>Mail</th>
-                    <th>Result</th>            
+                    <th>Overall Result</th>            
                 </tr>
             </thead>
                 <tbody>        
@@ -62,11 +71,17 @@
                 </tbody>
             
         </table>
-
+    </div>
+    <br>
+        <div class="txt white">
+            <h2 class="display-4 text-center imp">Result Details</h2>
+        </div>
+    <br>
+    <div id="ui">
         <table class="table table-hover txt">
             <thead class="thead-light">
                 <tr>
-                    <th>Roll</th>
+                    <!--<th>Roll</th>-->
                     <th>Semester</th>
                     <th>Course Code</th>
                     <th>mid</th>
@@ -81,7 +96,7 @@
                     <ng-container *ngFor="let res of service.results">
                         
                             <tr  *ngIf="res.roll === currentUser.getUsername()">
-                                <td > {{res.roll}} </td>
+                                <!--<td > {{res.roll}} </td> -->
                                 <td > {{res.semester}} </td>
                                 <td > {{res.courseCode}} </td>
                                 <td > {{res.mid}} </td>
@@ -102,7 +117,7 @@
     <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
-            <button class="btn btn-info btn-lg btn-block imp" type="submit" 
+            <button class="btn btn-info btn-lg btn-block imp white" type="submit" 
                 (click)="logout()">Log Out</button>
         </div>
         <div class="col-lg-3"></div>
