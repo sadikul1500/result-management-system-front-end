@@ -13,7 +13,7 @@ export class SignupService {
   constructor(private http: HttpClient) { }
 
   // public readonly baseUrl ='http://localhost/60349/api/Signup'; 
-  public readonly baseUrl ='https://localhost:44305/api/Signup'; 
+  public readonly baseUrl = 'http://localhost:5000/api/Signup' //https://localhost:44305/api/Signup'; 
   formData: Signup = new Signup(); 
 
   SignUpUser()
