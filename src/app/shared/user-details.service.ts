@@ -10,7 +10,7 @@ export class UserDetailsService {
 
   constructor(private http: HttpClient) { }
 
-  readonly baseUrl = 'https://localhost:44305/api/User';
+  readonly baseUrl =  'http://localhost:5000/api/User' //'https://localhost:44305/api/User';
   formData: UserDetails = new UserDetails();
   results: UserDetails[];
 
@@ -22,7 +22,9 @@ export class UserDetailsService {
 
   putUserDetails()
   {
-    return this.http.put(`${this.baseUrl}/${this.formData.id}`, this.formData);
+    console.log(this.formData.id);
+    return this.http.put(`${this.baseUrl}/${this.formData.roll}/${this.formData.courseCode}`,
+     this.formData);
   }
 
   /*
