@@ -9,7 +9,7 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  readonly baseUrl = 'https://localhost:44305/api/Users';
+  readonly baseUrl = 'http://localhost:5000/api/Users' //https://localhost:44305/api/Users';
   formData: Users = new Users();
   users: Users[];
 
